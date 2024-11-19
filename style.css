@@ -304,6 +304,118 @@ img {
 
 /* About Css End  */
 
+
+/* QA Css Start */
+
+.questions-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px 15px;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+
+.qa-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.qa-item {
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.question:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.question h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "inter";
+}
+
+.toggle-icon {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.question.open .toggle-icon {
+  transform: rotate(45deg);
+}
+
+/* Update these CSS rules in your style.css */
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 20px;
+}
+
+.answer.show {
+  max-height: 500px; /* Adjust this value based on your content length */
+  transition: max-height 0.5s ease-in;
+}
+
+.answer p {
+  margin: 0;
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-family: "inter";
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.answer.show p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
+}
+
+/* Update the question styles for smoother icon rotation */
+.toggle-icon {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+}
+
+.question.open .toggle-icon {
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .qa-container {
+      padding: 10px;
+  }
+  
+  .question h2 {
+      font-size: 16px;
+  }
+  
+  .answer p {
+      font-size: 14px;
+  }
+}
+
+/* QA Css End */
+
 /* Same Day Css Start  */
 .same-day-head {
   background-image: url("images/sameday.png");
@@ -549,31 +661,31 @@ img {
 
 /* Individual bars */
 .bar-5 {
-  width: 100%;
+  width: 94%;
   height: 10px;
   background-color: #ffb400;
 }
 
 .bar-4 {
-  width: 75%;
+  width: 5%;
   height: 10px;
   background-color: #ffb400;
 }
 
 .bar-3 {
-  width: 50%;
+  width: 1%;
   height: 10px;
   background-color: #ffb400;
 }
 
 .bar-2 {
-  width: 25%;
+  width: 0%;
   height: 10px;
   background-color: #ffb400;
 }
 
 .bar-1 {
-  width: 15%;
+  width: 1%;
   height: 10px;
   background-color: #ffb400;
 }
@@ -708,6 +820,10 @@ img {
   line-height: 20px;
   color: #de1d1d;
   margin-left: 5px;
+}
+
+.phonenum:hover {
+  color: #de1d1d;
 }
 
 .flex-box {
@@ -1286,9 +1402,11 @@ p.menu a:hover {
   max-width: 120px;
 }
 
-a:hover {
+/* Add specific hover rules for navigation links */
+.middle-column a:hover,
+.footer-07 .menu a:hover,
+.right-column a:hover {
   color: #fff !important;
-  text-decoration: none !important;
 }
 
 @media screen and (max-width: 600px) {
