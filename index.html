@@ -11,6 +11,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        (function() {
+          emailjs.init("8hqtc3A1Axk8geTk5"); // Replace with your actual public key
+        })();
+    </script>
 </head>
 <body>
     <!-- Hero section start  -->
@@ -517,19 +524,19 @@
             </div>
             <div class="col-md-6 get-quote" id="formclass">
                 <h1 class="form-heading">Get a quote</h1>
-                <form>
+                <form id="contactForm" onsubmit="return sendEmail(event)">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" placeholder="Name" id="formName">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp"
                             placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Phone number">
+                        <input type="tel" class="form-control" id="formPhone" placeholder="Phone number">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control" id="formMessage" rows="3"
                             placeholder="Your Message Here"></textarea>
                     </div>
                     <button class="form-btn" type="submit">Send</button>
@@ -645,6 +652,41 @@
             })
         });
 
+        // Send email based on form input
+        function sendEmail(event) {
+            event.preventDefault();
+
+            // Get form info
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const phone = document.getElementById('formPhone').value;
+            const message = document.getElementById('formMessage').value;
+
+            // Send an email using EmailJS
+            emailjs.send(
+                'service_036f2ds',
+                'template_54dw11y',
+                {
+                    from_name: name,
+                    reply_to: email,
+                    phone_number: phone,
+                    message: message
+                }
+            ).then(
+                // Alert success and clear form
+                function(response) {
+                    console.log("Success!", response.status, response.text);
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset();
+                },
+                // Display failure
+                function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send message. Please try again.');
+                }
+            );
+            return false;
+        }
 
         function myFunction() {
             var x = document.getElementById("myLinks");
