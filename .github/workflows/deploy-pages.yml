@@ -22,8 +22,9 @@ jobs:
         # Create a run-unique artifact name so deploy can pick the correct one
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "."
-          artifact_name: github-pages-${{ github.run_id }}
+          path: '.'
+          # upload-pages-artifact expects the input named `name` (not `artifact_name`)
+          name: github-pages-${{ github.run_id }}
 
       - name: Deploy to GitHub Pages
         # Use the newer v4 tag and reference the run-unique artifact name
