@@ -3,59 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://mgmgaragedoors.com/style.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <!-- font -->
         <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     </head>
     <body>
-        <!-- Hero section start  -->
+        <!-- Hero section start -->
         <div class="header-bg">
             <!-- nav start Desktop -->
-            <div class="header navBar navbar-desktop">
+            <nav class="header navBar navbar-desktop" aria-label="Main Navigation">
                 <div class="left-column">
-                    <img src="logo.svg" alt="Logo">
+                    <img src="logo.svg" alt="MGM Garage Door Logo">
                 </div>
                 <div class="middle-column">
-                    <a href="#">Services</a>
-                    <a href="#">About us</a>
-                    <a href="#">Contact us</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About us</a>
+                    <a href="#contact">Contact us</a>
                 </div>
                 <div class="right-column">
-                    <!-- <span class="contact-icon">&#9742;</span> -->
                     <i class="fa fa-phone" style="font-size:25px"></i>
-                    <a href="Tel:+1 (339) 999-7430" style="text-decoration: none; color: #ffffff;">
-                        <span class="phone-con">+1 (339) 999-7430</span>
-                    </a>
+                    <a href="Tel:+1 (339) 999-7430" style="text-decoration: none; color: #ffffff;"><span class="phone-con">+1 (339) 999-7430</span></a>
                 </div>
-            </div>
+            </nav>
             <!-- nav end desktop -->
             <!-- Mobile menu start -->
-            <!-- Simulate a smartphone / tablet -->
-            <div class="header mobile-container">
-                <!-- Top Navigation Menu -->
+            <nav class="header mobile-container" aria-label="Mobile Navigation">
                 <div class="topnav">
                     <a href="javascript:void(0);" onclick="myFunction()">
                         <i class="fa fa-bars"></i>
                     </a>
-                    <a href="#home" class="logo">
-                        <img src="./images/logo.png" alt="">
-                    </a>
-                    <a href="Tel:+1 (339) 999-7430" class="phone-icon">
-                        <img src="images/mbllogo.png" alt="">
-                    </a>
+                    <a href="#home" class="logo"><img src="./images/logo.png" alt=""></a>
+                    <a href="Tel:+1 (339) 999-7430" class="phone-icon"><img src="images/mbllogo.png" alt=""></a>
                 </div>
                 <div id="myLinks">
-                    <a href="#news">Services</a>
-                    <a href="#contact">About us</a>
-                    <a href="#about">Contact</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About us</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <!-- End smartphone / tablet look -->
-            </div>
+            </nav>
             <!-- Mobile menu end -->
             <!-- Content Section with Three Columns -->
             <div class="header-section container" style="position: relative;">
