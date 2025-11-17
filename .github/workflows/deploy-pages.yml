@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - Omer-edits
   workflow_dispatch:
 
 jobs:
@@ -12,18 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: write
-      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: "."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          allow_empty_commit: true
+          cname: mgmgaragedoors.com
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
 
-        
