@@ -10,28 +10,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: github-pages
     permissions:
       contents: read
       pages: write
       id-token: write
-    # The deploy action requires a GitHub Environment to create a Pages deployment.
-    # See error: "Missing environment. Ensure your workflow's deployment job has an environment." 
-    environment:
-      name: github-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
-        # Create a run-unique artifact name so deploy can pick the correct one
         uses: actions/upload-pages-artifact@v4
         with:
           path: "."
-          # upload-pages-artifact expects the input named `name` (not `artifact_name`)
-          name: github-pages-${{ github.run_id }}
 
       - name: Deploy to GitHub Pages
-        # Use the newer v4 tag and reference the run-unique artifact name
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-${{ github.run_id }}
+
+
