@@ -7,6 +7,8 @@ body {
   font-family: "Inter", Arial, sans-serif;
   background: #fff;
   min-width: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -20,9 +22,11 @@ img {
 .navBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
   padding: 2vw 4vw;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 
 .left-column img {
@@ -42,9 +46,32 @@ img {
   text-decoration: none;
   margin: 0 2vw;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 22px;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.middle-column a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.middle-column a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #de1d1d;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.middle-column a:hover::after {
+  width: 100%;
 }
 
 .right-column {
@@ -113,17 +140,20 @@ img {
 }
 
 .header-section h1 {
-  font-size: 4vw;
+  font-size: clamp(28px, 4vw, 56px);
   font-weight: 700;
-  line-height: 1.1;
-  font-family: "Inter";
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
   word-break: break-word;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .header-section h1 span {
-  font-size: 2.5vw;
-  font-weight: 700;
-  font-family: "Inter";
+  font-size: clamp(18px, 2.5vw, 36px);
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 
 .icon-box {
@@ -178,15 +208,29 @@ img {
   background-color: #de1d1d;
   border: none;
   color: white;
-  padding: 12px 30px;
+  padding: 14px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   line-height: 22px;
   cursor: pointer;
-  border-radius: 66px;
-  font-family: "inter";
+  border-radius: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(222, 29, 29, 0.3);
+}
+
+.button:hover {
+  background-color: #c11717;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(222, 29, 29, 0.4);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(222, 29, 29, 0.3);
 }
 
 .phone_icon {
@@ -296,10 +340,11 @@ img {
 
 .abouthead {
   color: #000000;
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   font-style: normal;
   font-weight: 600;
-  font-family: "inter";
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1rem;
 }
 
 .row.row-fortab {
@@ -469,19 +514,20 @@ img {
   font-family: "inter";
 }
 .serve h1 {
-  font-size: 48px;
+  font-size: clamp(28px, 4.5vw, 48px);
   font-weight: 600;
-  line-height: 66px;
+  line-height: 1.4;
   color: #000000;
-  font-family: "inter";
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1.5rem;
 }
 
 .serve p {
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 1.6;
   color: #727272;
-  font-family: "inter";
+  font-family: "Inter", sans-serif;
 }
 
 .left-col h1 {
@@ -790,29 +836,62 @@ img {
 }
 
 .form-group input {
-  padding: 25px;
-  border-radius: 0%;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #de1d1d;
+  box-shadow: 0 0 0 3px rgba(222, 29, 29, 0.1);
+  outline: none;
+}
+
+.form-group textarea {
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Inter", sans-serif;
+  resize: vertical;
 }
 
 .form-heading {
-  font-family: "Inter";
-  font-size: 48px;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(28px, 4.5vw, 48px);
   font-weight: 600;
-  line-height: 67px;
+  line-height: 1.4;
   color: #000000;
+  margin-bottom: 1.5rem;
 }
 
 .form-btn {
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   border-radius: 50px;
-  border: unset;
+  border: none;
   background-color: #de1d1d;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
   color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(222, 29, 29, 0.3);
+}
+
+.form-btn:hover {
+  background-color: #c11717;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(222, 29, 29, 0.4);
+}
+
+.form-btn:active {
+  transform: translateY(0);
 }
 
 .contactdtls {
@@ -894,10 +973,81 @@ footer {
   color: rgba(255, 255, 255, 0.6);
   margin: 0 10px;
   letter-spacing: 1px;
-  font-family: "inter";
+  font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 15px;
   font-weight: 500;
+}
+
+/* Social Media Links */
+.social-media-links {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: #de1d1d;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(222, 29, 29, 0.4);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* License and Service Area */
+.license-info {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.license-number {
+  color: #a3de83;
+  font-weight: 600;
+}
+
+.service-area {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  margin-top: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Call Button Styling */
+.button-call {
+  background: linear-gradient(135deg, #de1d1d 0%, #ff3333 100%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 6px rgba(222, 29, 29, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(222, 29, 29, 0.6);
+  }
 }
 
 a.logo:hover {
@@ -979,10 +1129,10 @@ p.menu a:hover {
 
 @media screen and (max-width: 768px) {
   .mobile_hidden{
-    display:none;
+    display:none !important;
   }
   .desktop_hidden{
-    display:block;
+    display:block !important;
   }
   .three-img {
     width: 100% !important;
