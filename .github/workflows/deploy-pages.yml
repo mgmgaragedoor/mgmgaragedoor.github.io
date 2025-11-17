@@ -21,10 +21,10 @@ jobs:
       - name: Upload Pages artifact
         # v1 used an older `actions/upload-artifact` version that is now deprecated.
         # Use v2 which depends on the supported artifact action.
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "."
 
       - name: Deploy to GitHub Pages
         # Use the newer v2 tag to avoid transitive dependencies on deprecated actions
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
