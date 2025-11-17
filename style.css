@@ -1,19 +1,13 @@
 * {
   outline: none !important;
 }
-
 body {
   margin: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background: #fff;
-  min-width: 0;
+  font-family: "inter";
 }
 
-
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  width: 100%;
 }
 
 /* navbar css start */
@@ -21,26 +15,23 @@ img {
   display: flex;
   justify-content: space-between;
   color: #fff;
-  padding: 2vw 4vw;
-  flex-wrap: wrap;
+  padding: 25px 48px;
 }
 
 .left-column img {
   max-width: 150px;
   height: auto;
-  width: 100%;
 }
 
 .middle-column {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .middle-column a {
   color: #fff;
   text-decoration: none;
-  margin: 0 2vw;
+  margin: 0 15px;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -50,7 +41,6 @@ img {
 .right-column {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .contact-icon {
@@ -106,46 +96,40 @@ img {
 
 .header-section {
   color: #fff;
-  padding: 10vw 0 5vw 0;
+  padding: 15% 0;
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .header-section h1 {
-  font-size: 4vw;
+  font-size: 60px;
   font-weight: 700;
-  line-height: 1.1;
-  font-family: "Inter";
-  word-break: break-word;
+  line-height: 43px;
+  font-family: "inter";
 }
 
 .header-section h1 span {
-  font-size: 2.5vw;
+  font-size: 40px;
   font-weight: 700;
-  font-family: "Inter";
+  font-family: "inter";
 }
 
 .icon-box {
   display: flex;
   align-items: center;
   text-align: left;
-  padding: 2vw;
-  gap: 2vw;
-  flex-wrap: wrap;
+  padding: 20px;
 }
 
 .icon {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 2.5vw;
-  margin-top: 1vw;
+  font-size: 36px;
+  margin-top: 22px;
 }
 
 .text-content {
   text-align: left;
-  flex: 1 1 0;
 }
 .first-title {
   margin: 0 !important;
@@ -909,17 +893,11 @@ p.menu a:hover {
 }
 
 .row {
-  padding: 5vw 5vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2vw;
+  margin-right: 0 !important;
   margin-left: 0 !important;
 }
 .maintenance-col {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  display: block;
+  height: fit-content;
   margin: auto;
 }
 
@@ -941,40 +919,6 @@ p.menu a:hover {
   .hidden-for-desk {
     display: unset;
   }
-  .navBar {
-    flex-direction: column;
-    padding: 4vw 2vw;
-  }
-  .middle-column {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-  .right-column {
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-  }
-  .header-section h1 {
-    font-size: 6vw;
-  }
-  .header-section h1 span {
-    font-size: 4vw;
-  }
-  .icon-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1vw;
-  }
-  .row13 {
-    flex-direction: column;
-    gap: 2vw;
-    padding: 8vw 2vw;
-  }
-  .three-img {
-    max-width: 100%;
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -985,10 +929,7 @@ p.menu a:hover {
     display:block;
   }
   .three-img {
-    width: 100% !important;
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
+    width: 50% !important;
   }
   .hidden-for-tablet-map {
     display: none;
@@ -1005,10 +946,10 @@ p.menu a:hover {
     width: 100%;
   }
   .header-section h1 {
-    font-size: 8vw;
+    font-size: 40px;
     font-weight: 700;
-    line-height: 1.1;
-    font-family: "Inter";
+    line-height: 43px;
+    font-family: "inter";
   }
 
   .description {
@@ -1024,8 +965,7 @@ p.menu a:hover {
   }
 
   .icon-box {
-    padding: 2vw 1vw 1vw 1vw;
-    gap: 1vw;
+    padding: 18px 5px 10px 10px;
   }
 
   .col2 {
@@ -1066,27 +1006,25 @@ p.menu a:hover {
     font-family: "inter";
   }
 
-      .header-section h1 {
-        font-size: 10vw;
-        line-height: 1.1;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        margin-top: 8vw;
+  .image-gallery-text p {
+    font-size: 14px;
+    font-family: "inter";
+    line-height: 16px;
+  }
+
   .serve h1 {
     font-size: 30px;
     line-height: 40px;
     font-family: "inter";
   }
 
-      .header-section h1 span {
-        font-size: 6vw;
-        font-family: "Inter";
+  .serve p {
+    font-size: 14px;
+    line-height: 18px;
     font-family: "inter";
   }
-      .row13 {
-        padding: 10vw 2vw;
-        gap: 2vw;
-        flex-direction: column;
+
+  .serve ul li {
     padding: 0px;
     font-size: 14px;
     font-family: "inter";
@@ -1111,8 +1049,8 @@ p.menu a:hover {
   }
 
   .abouticon {
-      .same-day-head {
-        padding: 20vw 4vw !important;
+    font-size: 16px;
+    font-family: "inter";
     margin: 0;
     margin-bottom: 6px !important;
   }
