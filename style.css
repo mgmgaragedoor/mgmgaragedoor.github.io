@@ -3,7 +3,22 @@
 }
 body {
   margin: 0;
-  font-family: "inter";
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111;
+  font-size: 16px;
+}
+
+:root {
+  --accent: #de1d1d; /* primary red accent */
+  --accent-dark: #d8232a;
+  --bg: #ffffff;
+  --muted: #727272;
+  --dark: #0a0a0a;
+  --card-border: #ecebeb;
+  --radius: 10px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
 }
 
 img {
@@ -159,7 +174,7 @@ img {
   color: #ffffff;
 }
 .button {
-  background-color: #de1d1d;
+  background-color: var(--accent);
   border: none;
   color: white;
   padding: 12px 30px;
@@ -171,6 +186,12 @@ img {
   cursor: pointer;
   border-radius: 66px;
   font-family: "inter";
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--accent-dark);
+  outline: none;
 }
 
 .phone_icon {
@@ -188,17 +209,17 @@ img {
 @keyframes pulsing {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, .7)
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
 
   70% {
     transform: scale(1.034);
-    box-shadow: 0 0 0 10px transparent
+    box-shadow: 0 0 0 10px transparent;
   }
 
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 transparent
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 /* hero section end  */
@@ -278,24 +299,30 @@ img {
 }
 
 .pricing-card {
-  background: #fff;
-  border: 1px solid #ecebeb;
-  border-left: 5px solid #d8232a;
-  padding: 24px;
-  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-left: 5px solid var(--accent);
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius);
   text-align: left;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .pricing-card h3 {
-  margin: 0 0 12px;
-  font-size: 20px;
-  color: #d8232a;
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--accent-dark);
   font-weight: 800;
 }
 
 .pricing-card .price {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: #111;
@@ -311,6 +338,44 @@ img {
   max-width: 520px;
   margin: 24px auto 0;
   border-left-color: #000;
+}
+
+/* Responsive hero title */
+.header-section h1 {
+  font-size: clamp(28px, 5.6vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* Make sure nav links have comfortable spacing and visibility */
+.middle-column a {
+  padding: 8px 10px;
+}
+
+/* Pricing grid spacing improvements */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 767px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header-section {
+    padding: 30% 0 20% 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .middle-column {
+    gap: 6px;
+  }
 }
 
 .bg-test {
@@ -377,7 +442,6 @@ img {
 }
 
 /* About Css End  */
-
 
 /* QA Css Start */
 
@@ -476,15 +540,15 @@ img {
 
 @media screen and (max-width: 768px) {
   .qa-container {
-      padding: 10px;
+    padding: 10px;
   }
-  
+
   .question h2 {
-      font-size: 16px;
+    font-size: 16px;
   }
-  
+
   .answer p {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
@@ -874,7 +938,7 @@ img {
 }
 
 .contactdtls {
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 .phone {
@@ -902,7 +966,18 @@ img {
 
 .flex-box {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
   padding: 0;
+}
+
+.contact-combined .contact-item {
+  margin: 0;
+  padding: 0;
+  min-width: 180px;
+  justify-content: flex-start;
 }
 /* Form End  */
 
@@ -976,13 +1051,13 @@ p.menu a:hover {
 }
 
 /* Footer End */
-.desktop_hidden{
-  display:none;
+.desktop_hidden {
+  display: none;
 }
 
-@media screen and (min-width: 991px){
-  .hero_overlay{
-    display:none;
+@media screen and (min-width: 991px) {
+  .hero_overlay {
+    display: none;
   }
 }
 @media screen and (max-width: 991px) {
@@ -996,11 +1071,11 @@ p.menu a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .mobile_hidden{
-    display:none;
+  .mobile_hidden {
+    display: none;
   }
-  .desktop_hidden{
-    display:block;
+  .desktop_hidden {
+    display: block;
   }
   .three-img {
     width: 50% !important;
